@@ -1,0 +1,9 @@
+#= require modernizr
+#= require jquery
+#= require handlebars
+#= require ember
+#= require ember-data
+#= require bootstrap
+#= require_self
+#= require kanban
+window.Kanban = Ember.Application.create()
