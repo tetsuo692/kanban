@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(project_params)
 
     if @project.save
       render json: @project, status: :created, location: @project
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
-    if @project.update_attributes(params[:project])
+    if @project.update_attributes(project_params)
       head :no_content
     else
       render json: @project.errors, status: :unprocessable_entity
@@ -46,5 +46,10 @@ class ProjectsController < ApplicationController
     @project.destroy
 
     head :no_content
+  end
+
+  private
+  def project_params
+    params.require(:project).permit(:title)
   end
 end

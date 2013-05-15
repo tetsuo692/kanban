@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0.rc1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,8 +27,8 @@ gem 'sqlite3'
 
 gem "active_model_serializers", :github => "rails-api/active_model_serializers"
 group :assets do
-  gem "sass-rails", "~> 3.2"
-  gem "coffee-rails", "~> 3.2"
+  gem "sass-rails", "4.0.0.rc1"
+  gem "coffee-rails", "4.0.0"
   gem "compass-rails"
   gem "uglifier"
   gem "bootstrap-sass", "~> 2.3.1.0"
@@ -44,7 +44,7 @@ end
 
 group :test, :development do
   gem "parallel_tests"
-  gem 'spork-rails'
+  gem 'spork-rails', github: 'A-gen/spork-rails'
   gem "webrat"
   gem "shoulda-matchers"
   gem "factory_girl_rails"

@@ -1,4 +1,4 @@
-require_dependency 'mime_type_constraint'
+
 Kanban::Application.routes.draw do
 
 
@@ -15,8 +15,9 @@ Kanban::Application.routes.draw do
     get '/', to: 'welcome#index'
 
     get '*foo', to: 'welcome#index'
-  end
 
+  end
+  root :to => "welcome#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
