@@ -1,0 +1,9 @@
+<ul class='unstyled'>
+  {{#each project in projects}}
+    <li>
+    <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
+    </li>
+  {{/each}}
+</ul>
+
+{{#linkTo 'projects.new'}}New{{/linkTo}}

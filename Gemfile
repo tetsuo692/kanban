@@ -31,7 +31,7 @@ group :assets do
   gem "coffee-rails", "~> 3.2"
   gem "compass-rails"
   gem "uglifier"
-  gem "bootstrap-sass", "~> 2.0.3.0"
+  gem "bootstrap-sass", "~> 2.3.1.0"
   gem "handlebars_assets"
   gem "jquery-rails"
   gem "ember-rails"
@@ -40,4 +40,25 @@ end
 
 group :development do
   gem "quiet_assets"
+end
+
+group :test, :development do
+  gem "parallel_tests"
+  gem 'spork-rails'
+  gem "webrat"
+  gem "shoulda-matchers"
+  gem "factory_girl_rails"
+  gem "rspec-rails", "~> 2.0"
+  gem 'database_cleaner'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+  gem 'guard'
+  gem 'terminal-notifier-guard'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'active_model_serializers-matchers', :github => "tetsuo692/active_model_serializers-matchers"
 end

@@ -1,8 +1,22 @@
 require_dependency 'mime_type_constraint'
 Kanban::Application.routes.draw do
-  get '/', to: 'welcome#index', constraints: MimeTypeConstraint.new(:html)
 
-  get '*foo', to: 'welcome#index', constraints: MimeTypeConstraint.new(:html)
+
+  constraints format: :json do
+    scope "/api/v1" do
+      resources :projects, except: [:new, :edit] do
+        resources :stacks, except: [:new, :edit]
+      end
+    end
+  end
+
+
+  constraints format: :html do
+    get '/', to: 'welcome#index'
+
+    get '*foo', to: 'welcome#index'
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
