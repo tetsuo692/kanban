@@ -23,13 +23,13 @@ gem 'sqlite3'
 # gem 'capistrano', :group => :development
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+# gem 'ruby-debug19', require: 'ruby-debug'
 
-gem "active_model_serializers", :github => "rails-api/active_model_serializers"
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 group :assets do
   gem "sass-rails", "4.0.0.rc1"
   gem "coffee-rails", "4.0.0"
-  gem "compass-rails"
+  gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
   gem "uglifier"
   gem "bootstrap-sass", "~> 2.3.1.0"
   gem "handlebars_assets"

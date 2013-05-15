@@ -6,6 +6,14 @@ GIT
       spork (>= 1.0rc0)
 
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 3e0040191220992eb6d5ccc17ddcc053733ee538
+  branch: rails4
+  specs:
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/rails-api/active_model_serializers.git
   revision: 8b7e9d32d7acc47b6159eb577e3668a6d14a99ff
   specs:
@@ -69,8 +77,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     database_cleaner (1.0.1)
     diff-lcs (1.2.4)
     em-websocket (0.5.0)
@@ -240,7 +246,7 @@ DEPENDENCIES
   active_model_serializers-matchers!
   bootstrap-sass (~> 2.3.1.0)
   coffee-rails (= 4.0.0)
-  compass-rails
+  compass-rails!
   database_cleaner
   ember-rails
   factory_girl_rails
