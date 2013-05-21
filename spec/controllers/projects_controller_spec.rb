@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ProjectsController do
-  describe ProjectsController, "#index" do
+  describe "#index" do
     let!(:projects){ create_list(:project, 2) }
     before(:each) do
       xhr :get, :index, format: :json
@@ -12,7 +12,7 @@ describe ProjectsController do
 
   end
 
-  describe ProjectsController, "#show" do
+  describe "#show" do
     let(:project) { create(:project) }
 
     before(:each) do
@@ -23,7 +23,7 @@ describe ProjectsController do
     it { should respond_with(:success) }
   end
 
-  describe ProjectsController, "#create" do
+  describe "#create" do
     describe "with valid params" do
       before(:each) do
         @count = Project.count
@@ -36,13 +36,14 @@ describe ProjectsController do
       it { expect(Project.count).to eq(@count + 1) }
 
       it { should respond_with(:created) }
+
     end
 
     describe "with invalid params" do
       before(:each) do
         @count = Project.count
         Project.any_instance.stub(:save).and_return(false)
-        xhr :post, :create, :project => {title: ''}
+        xhr :post, :create, :project => attributes_for(:project)
       end
       specify { expect(assigns(:project)).to be_a_new(Project) }
 
@@ -52,7 +53,7 @@ describe ProjectsController do
     end
   end
 
-  describe ProjectsController, "#update" do
+  describe "#update" do
     let(:project) { create(:project) }
     describe "with valid params" do
       before(:each) do
@@ -72,7 +73,7 @@ describe ProjectsController do
     end
   end
 
-  describe ProjectsController, "#destroy" do
+  describe "#destroy" do
     let!(:count) { Project.count }
     let(:project) { create(:project) }
     before(:each) do

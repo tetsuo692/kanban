@@ -43,10 +43,13 @@ group :development do
 end
 
 group :test, :development do
+  gem 'guard-jasmine'
+  gem "jasminerice", github:'bradphelan/jasminerice'
+  gem 'debugger'
   gem "parallel_tests"
   gem 'spork-rails', github: 'A-gen/spork-rails'
   gem "webrat"
-  gem "shoulda-matchers"
+  gem "shoulda-matchers", "~> 2.1.0"
   gem "factory_girl_rails"
   gem "rspec-rails", "~> 2.0"
   gem 'database_cleaner'
@@ -62,3 +65,6 @@ group :test, :development do
   gem 'guard-bundler'
   gem 'active_model_serializers-matchers', :github => "tetsuo692/active_model_serializers-matchers"
 end
+
+gem 'haml'
+gem 'haml-rails'

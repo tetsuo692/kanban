@@ -1,9 +1,7 @@
 module FactoryGirl
   module ParamsFor
-    def params_for(model)
-      def params_for(object)
-        attributes_for(object).delete_if{|k,v| v.nil?}
-      end
+    def params_for(object)
+      attributes_for(object).delete_if{|k,v| v.nil?}
     end
   end
 end

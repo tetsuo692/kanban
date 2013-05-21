@@ -19,7 +19,7 @@ class StacksController < ApplicationController
   # POST /stacks
   # POST /stacks.json
   def create
-    @stack = @project.stacks.build(params[:stack])
+    @stack = @project.stacks.build(stack_params)
 
     if @stack.save
       render json: @stack, status: :created, location: [@project, @stack]
@@ -33,7 +33,7 @@ class StacksController < ApplicationController
   def update
     @stack = Stack.find(params[:id])
 
-    if @stack.update_attributes(params[:stack])
+    if @stack.update_attributes(stack_params)
       head :no_content
     else
       render json: @stack.errors, status: :unprocessable_entity
@@ -53,5 +53,9 @@ class StacksController < ApplicationController
 
   def find_project
     @project = Project.find(params[:project_id])
+  end
+
+  def stack_params
+    params.require(:stack).permit(:title)
   end
 end
