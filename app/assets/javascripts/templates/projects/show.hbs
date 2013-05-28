@@ -1,1 +1,7 @@
-<h2>{{ project.title }}</h2>
+<h2>{{ title }}</h2>
+
+<ul class="unstyled">
+{{#each stack in stacks }}
+  <li>{{stack.title}}</li>
+{{/each}}
+</ul>

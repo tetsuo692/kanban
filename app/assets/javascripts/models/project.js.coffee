@@ -1,3 +1,4 @@
 Kanban.Project = DS.Model.extend
   title: DS.attr('string')
-  stacks: DS.hasMany('Kanban.Stack', {embedded: true})
+  updated_at: DS.attr('date')
+  stacks: DS.hasMany('Kanban.Stack')

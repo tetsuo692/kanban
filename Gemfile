@@ -32,6 +32,7 @@ group :assets do
   gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
   gem "uglifier"
   gem "bootstrap-sass", "~> 2.3.1.0"
+  gem 'handlebars-source', '1.0.0.rc4'
   gem "handlebars_assets"
   gem "jquery-rails"
   gem "ember-rails"

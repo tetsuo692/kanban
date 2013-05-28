@@ -1,9 +1,9 @@
 class StacksController < ApplicationController
-  before_filter :find_project
+  # before_filter :find_project
   # GET /stacks
   # GET /stacks.json
   def index
-    @stacks = Stack.all
+    @stacks = Stack.find(params[:ids])
 
     render json: @stacks
   end

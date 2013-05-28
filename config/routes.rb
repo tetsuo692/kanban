@@ -4,9 +4,8 @@ Kanban::Application.routes.draw do
 
   constraints format: :json do
     scope "/api/v1" do
-      resources :projects, except: [:new, :edit] do
-        resources :stacks, except: [:new, :edit]
-      end
+      resources :projects, except: [:new, :edit]
+      resources :stacks, except: [:new, :edit]
     end
   end
 

@@ -10,7 +10,8 @@ Kanban.ProjectsIndexRoute = Kanban.ProjectsRoute.extend
 
 Kanban.ProjectsShowRoute = Kanban.ProjectsRoute.extend
   setupController: (controller, model) ->
-    controller.set('project', model)
+    @controllerFor('stacks.index').set('content', model.get('stacks.content'))
+    controller.set('content', model)
 
 Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
   model: ->

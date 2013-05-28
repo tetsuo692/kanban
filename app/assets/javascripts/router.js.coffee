@@ -9,4 +9,6 @@ Kanban.Router.map ->
       path: '/:project_id'
     @route 'edit',
       path: '/:project_id/edit'
+    @resource 'stacks', ->
+      @route 'new'
 
