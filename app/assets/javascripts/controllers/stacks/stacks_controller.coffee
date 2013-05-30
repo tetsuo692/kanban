@@ -1,3 +1,3 @@
-Kanban.StacksIndexController = Ember.ArrayController.extend
-  sortProperties: ['updated_at']
+Kanban.StacksController = Ember.ArrayController.extend
+  sortProperties: ['title']
   sortAscending: true

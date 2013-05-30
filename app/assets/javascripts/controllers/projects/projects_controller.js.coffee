@@ -3,6 +3,4 @@ Kanban.ProjectsIndexController = Ember.ArrayController.extend
   sortAscending: true
 
 Kanban.ProjectsShowController = Ember.ObjectController.extend
-  needs: ['stacks.index']
-
-
+  needs: ['stacks']
