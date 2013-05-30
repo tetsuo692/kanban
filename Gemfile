@@ -67,5 +67,6 @@ group :test, :development do
   gem 'active_model_serializers-matchers', :github => "tetsuo692/active_model_serializers-matchers"
 end
 
+gem 'acts_as_list'
 gem 'haml'
 gem 'haml-rails'
