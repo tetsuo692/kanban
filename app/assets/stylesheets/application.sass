@@ -1,4 +1,9 @@
-$navbarBackground: #08c
-$navbarBrandColor: #08c
+
 @import 'bootstrap'
 @import 'bootstrap-responsive'
+
+ul.projects
+  li
+    @include grid-core-span(2, $gridColumnWidth, $gridGutterWidth)
+    display: inline-block
+    border: 1px
