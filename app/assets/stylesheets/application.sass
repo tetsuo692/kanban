@@ -4,6 +4,10 @@
 
 ul.projects
   li
-    @include grid-core-span(2, $gridColumnWidth, $gridGutterWidth)
     display: inline-block
-    border: 1px
+    padding: 4px
+    background-color: #fff
+    border: 1px solid #ccc
+    border: 1px solid rgba(0,0,0,.2)
+    @include box-shadow(0 1px 3px rgba(0,0,0,.1))
+    @include grid-core-span(2, $gridColumnWidth, $gridGutterWidth)
