@@ -1,3 +1,4 @@
+$bodyBackground: #dbe4eb
 
 @import 'bootstrap'
 @import 'bootstrap-responsive'
@@ -5,9 +6,23 @@
 ul.projects
   li
     display: inline-block
-    padding: 4px
+    padding: 2%
+    margin: 2px
+    height: 155px
     background-color: #fff
     border: 1px solid #ccc
     border: 1px solid rgba(0,0,0,.2)
     @include box-shadow(0 1px 3px rgba(0,0,0,.1))
-    @include grid-core-span(2, $gridColumnWidth, $gridGutterWidth)
+    @include grid-core-span(3, $gridColumnWidth, $gridGutterWidth)
+
+ul.stacks
+  li.stack
+    display: inline-block
+    padding: 2%
+    margin: 2px
+    height: 255px
+    background-color: #fff
+    border: 1px solid #ccc
+    border: 1px solid rgba(0,0,0,.2)
+    @include box-shadow(0 1px 3px rgba(0,0,0,.1))
+    @include grid-core-span(3, $gridColumnWidth, $gridGutterWidth)

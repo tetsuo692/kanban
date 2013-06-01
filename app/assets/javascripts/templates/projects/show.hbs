@@ -1,9 +1,20 @@
 <h2>{{ title }}</h2>
 
-<ul class="unstyled">
+<ul class="unstyled stacks">
 {{#each controllers.stacks }}
-  <li>
+  <li class='stack'>
     <h3>{{title}}</h3>
+    <ul class='unstyled cards'>
+      <li class='card'>
+        <h4>11</h4>
+      </li>
+      <li class='card'>
+        <h4>11</h4>
+      </li>
+      <li class='card'>
+        <h4>11</h4>
+      </li>
+    </ul>
   </li>
 {{/each}}
 </ul>
