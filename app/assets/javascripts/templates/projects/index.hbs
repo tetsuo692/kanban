@@ -1,6 +1,6 @@
 <ul class='unstyled projects'>
   {{#each project in controller}}
-    <li>
+    <li class='span3'>
       <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
     </li>
   {{/each}}
