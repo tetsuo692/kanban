@@ -7,12 +7,17 @@ body
   padding-top: 60px
 
 ul.projects
+  @extend .unstyled
   li
-    height: 155px
+    height: 250px
     background-color: #fff
+    margin-bottom: $baseLineHeight
     @include box-shadow(0 1px 3px rgba(0,0,0,.1))
+    div
+      padding: 10px
 
 ul.stacks
+  @extend .unstyled
   li.stack
     display: inline-block
     height: 255px

@@ -1,23 +1,27 @@
+<div class="row">
+  <div class='span12 page-header'>
+    <h2>{{ title }}</h2>
+  </div>
 
-<h2>{{ title }}</h2>
+</div>
 
-
-
-<ul class="unstyled stacks">
-{{#each controllers.stacks }}
-  <li class='stack span3'>
-    <h3>{{title}}</h3>
-    <ul class='unstyled cards'>
-      <li class='card'>
-        <h4>11</h4>
-      </li>
-      <li class='card'>
-        <h4>11</h4>
-      </li>
-      <li class='card'>
-        <h4>11</h4>
-      </li>
-    </ul>
-  </li>
-{{/each}}
-</ul>
+<div class='row'>
+  <ul class="stacks">
+  {{#each controllers.stacks }}
+    <li class='stack span3'>
+      <h3>{{title}}</h3>
+      <ul class='unstyled cards'>
+        <li class='card'>
+          <h4>11</h4>
+        </li>
+        <li class='card'>
+          <h4>11</h4>
+        </li>
+        <li class='card'>
+          <h4>11</h4>
+        </li>
+      </ul>
+    </li>
+  {{/each}}
+  </ul>
+</div>

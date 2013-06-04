@@ -1,9 +1,19 @@
-<ul class='unstyled projects'>
-  {{#each project in controller}}
-    <li class='span3'>
-      <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
-    </li>
-  {{/each}}
-</ul>
-
-{{#linkTo 'projects.new'}}New{{/linkTo}}
+<div class="row">
+  <div class='span12'>
+    <div class='page-header'>
+      {{#linkTo 'projects.new' class='btn btn-small pull-right'}}New{{/linkTo}}
+      <h2>Projects</h2>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <ul class='projects'>
+    {{#each project in controller}}
+      <li class='span3'>
+        <div class='project'>
+          <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
