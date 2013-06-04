@@ -8,7 +8,7 @@ body
 
 ul.projects
   @extend .unstyled
-  li
+  li.project
     height: 250px
     background-color: #fff
     margin-bottom: $baseLineHeight
@@ -19,7 +19,11 @@ ul.projects
 ul.stacks
   @extend .unstyled
   li.stack
-    display: inline-block
-    height: 255px
+    margin-bottom: $baseLineHeight
+    height: 500px
     background-color: #fff
     @include box-shadow(0 1px 3px rgba(0,0,0,.1))
+    div.stack
+      padding: 10px
+    ul.cards
+      @extend .unstyled
