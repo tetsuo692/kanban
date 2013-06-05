@@ -6,6 +6,7 @@ Kanban.ProjectsIndexRoute = Kanban.ProjectsRoute.extend
   model: ->
     Kanban.Project.find()
   setupController: (controller, model) ->
+    @_super(controller, model);
     controller.set('projects', model)
 
 Kanban.ProjectsShowRoute = Kanban.ProjectsRoute.extend
