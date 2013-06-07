@@ -2,15 +2,16 @@
   {{#linkTo 'projects.new' class='btn btn-small pull-right'}}New{{/linkTo}}
   <h2>Projects</h2>
 </div>
-
-<div class='row'>
-  <ul class='projects'>
-    {{#each project in controller}}
+{{#each projectGroup in controller.groupProjects }}
+  <div class="row">
+    <ul class='projects'>
+      {{#each project in projectGroup}}
       <li class='project span3'>
         <div class='project'>
           <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
         </div>
       </li>
-    {{/each}}
-  </ul>
-</div>
+      {{/each}}
+    </ul>
+  </div>
+{{/each}}
