@@ -3,15 +3,5 @@
   <h2>Projects</h2>
 </div>
 {{#each projectGroup in controller.groupProjects }}
-  <div class="row">
-    <ul class='projects'>
-      {{#each project in projectGroup}}
-      <li class='project span3'>
-        <div class='project'>
-          <h3>{{#linkTo 'projects.show' project}}{{ project.title }} {{/linkTo}}</h3>
-        </div>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
+  {{partial 'projects/grouped_projects'}}
 {{/each}}
