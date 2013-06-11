@@ -5,25 +5,7 @@
 <div class='row'>
   <ul class="stacks">
   {{#each controllers.stacks}}
-    <li class='stack span3'>
-      <div class='stack'>
-        <div>
-          <a class="pull-right" href="#"><i class="icon-cog"></i></a><h5>{{title}}</h5>
-        </div>
-
-        <ol class='unstyled cards'>
-          <li class='card'>
-            <h6>11</h6>
-          </li>
-          <li class='card'>
-            <h6>11</h6>
-          </li>
-          <li class='card'>
-            <h6>11</h6>
-          </li>
-        </ol>
-      </div>
-    </li>
+    {{partial 'stacks/stack'}}
   {{/each}}
   </ul>
 </div>
