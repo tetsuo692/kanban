@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0.rc2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,7 +27,7 @@ gem 'sqlite3'
 
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
 group :assets do
-  gem "sass-rails", "4.0.0.rc1"
+  gem "sass-rails", "4.0.0.rc2"
   gem "coffee-rails", "4.0.0"
   gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
   gem "uglifier"
