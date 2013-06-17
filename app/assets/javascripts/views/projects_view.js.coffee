@@ -1,13 +1,11 @@
 Kanban.ProjectsView = Ember.View.extend
   templateName: 'projects'
 
-Kanban.ProjectsNewView = Bootstrap.ModalPane.extend
-  heading: 'New Project'
-  message: 'test'
-  primary: 'Save changes'
-  secondary: 'Cancel'
-  showBackdrop: true
-  bodyViewClass: Ember.View.extend
-    templateName: 'projects/new_body'
-  callback: (opts, event) ->
-    
+Kanban.ProjectsNewView = Kanban.ProjectsView.extend
+  templateName: 'projects/new'
+  tagName: 'form'
+  classNames: 'modal fade in form-custom-field-modal'.w()
+  didInsertElement: ->
+    @$().modal 'show'
+  willDestroyElement: ->
+    @$().modal 'hide'
