@@ -1,5 +1,6 @@
 <div class='page-header'>
-  {{#linkTo 'projects.new' class='btn btn-small pull-right'}}New{{/linkTo}}
+  
+  <button {{action addProject}} class='btn btn-small pull-right'>New</button>
   <h2>Projects</h2>
 </div>
 {{#each projectGroup in controller.groupProjects }}

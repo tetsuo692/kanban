@@ -1,4 +1,6 @@
 Kanban.ProjectsIndexController = Ember.ArrayController.extend
+  addProject: ->
+    Kanban.ProjectsNewView.popup()
   sortProperties: ['updated_at']
   sortAscending: true
   groupProjects: (->
