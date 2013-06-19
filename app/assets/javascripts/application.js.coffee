@@ -8,3 +8,4 @@
 #= require_self
 #= require kanban
 window.Kanban = Ember.Application.create()
+Kanban.LOG_TRANSITIONS = true

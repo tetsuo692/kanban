@@ -16,3 +16,5 @@ Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
     Kanban.Project.createRecord()
   setupController: (controller, model) ->
     controller.set('content', model)
+  renderTemplate: ->
+    @render('projects/index', {controller: 'projects.index'})
