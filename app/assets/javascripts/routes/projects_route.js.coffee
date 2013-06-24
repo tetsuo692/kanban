@@ -1,7 +1,7 @@
 Kanban.ProjectsRoute = Ember.Route.extend({
   events: {
     modalNewProject: ->
-      @render('ProjectsNewController')
+      @render('projects/new', {outlet: 'modal'})
   }
 })
 
