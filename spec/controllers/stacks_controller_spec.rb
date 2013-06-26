@@ -8,9 +8,9 @@ describe StacksController do
   describe "#index" do
     let!(:stacks) {create_list(:stack, 2, project: project)}
     before(:each) do
-      xhr :get, :index, project_id: project.to_param
+      xhr :get, :index, ids: stacks.map(&:to_param)
     end
-    specify { expect(assigns(:project)).to eq(project) }
+
     specify { expect(assigns(:stacks)).to eq(stacks) }
     it { should respond_with(:success) }
   end
@@ -18,10 +18,9 @@ describe StacksController do
   describe "#show" do
     let(:stack){create(:stack, project:project)}
     before(:each) do
-      xhr :get, :show, project_id: project.to_param, id: stack.to_param
+      xhr :get, :show, id: stack.to_param
     end
 
-    specify { expect(assigns(:project)).to eq(project) }
     specify { expect(assigns(:stack)).to eq(stack) }
     it { should respond_with(:success) }
   end
@@ -31,10 +30,10 @@ describe StacksController do
     describe 'with valid params' do
 
       before(:each) do
-        xhr :post, :create, project_id: project.to_param, stack: params_for(:stack)
+        xhr :post, :create,  stack: params_for(:stack)
       end
 
-      specify { expect(assigns(:project)).to eq(project) }
+
 
       specify { expect(assigns(:stack)).to be_persisted }
       specify { expect(assigns(:stack)).to be_a(Stack) }
@@ -48,9 +47,9 @@ describe StacksController do
 
       before(:each) do
         Stack.any_instance.stub(:save).and_return(false)
-        xhr :post, :create, project_id: project.to_param, stack: params_for(:stack)
+        xhr :post, :create,  stack: params_for(:stack)
       end
-      specify { expect(assigns(:project)).to eq(project) }
+
 
       specify { expect(assigns(:stack)).to_not be_persisted }
       specify { expect(assigns(:stack)).to be_a(Stack) }
@@ -68,10 +67,10 @@ describe StacksController do
     describe 'with valid params' do
 
       before(:each) do
-        xhr :put, :update, project_id: project.to_param, id: stack.to_param, stack: params_for(:stack)
+        xhr :put, :update,  id: stack.to_param, stack: params_for(:stack)
       end
 
-      specify { expect(assigns(:project)).to eq(project) }
+
       specify { expect(assigns(:stack)).to eq(stack) }
 
       it { should respond_with(:no_content) }
@@ -81,10 +80,10 @@ describe StacksController do
 
       before(:each) do
         Stack.any_instance.stub(:save).and_return(false)
-        xhr :put, :update, project_id: project.to_param, id: stack.to_param, stack: params_for(:stack)
+        xhr :put, :update,  id: stack.to_param, stack: params_for(:stack)
       end
 
-      specify { expect(assigns(:project)).to eq(project) }
+
       specify { expect(assigns(:stack)).to eq(stack) }
 
       it { should respond_with(:unprocessable_entity) }
@@ -96,10 +95,10 @@ describe StacksController do
     let!(:count){ project.stacks.count }
 
     before(:each) do
-      xhr :delete, :destroy, project_id: project.to_param, id: stack.to_param
+      xhr :delete, :destroy,  id: stack.to_param
     end
 
-    specify { expect(assigns(:project)).to eq(project) }
+
 
     specify { expect(project.stacks.count).to eq(count - 1) }
 
