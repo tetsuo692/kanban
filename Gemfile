@@ -26,20 +26,20 @@ gem 'sqlite3'
 # gem 'ruby-debug19', require: 'ruby-debug'
 
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
-group :assets do
-  gem "sass-rails", "4.0.0.rc2"
-  gem "coffee-rails", "4.0.0"
-  gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
-  gem "uglifier"
-  gem "bootstrap-sass", "~> 2.3.1.0"
-  gem 'handlebars-source', '1.0.0.rc4'
-  gem "handlebars_assets"
-  gem "jquery-rails"
-  gem "ember-rails"
-  gem 'ember-source', '1.0.0.rc6'
-  gem 'handlebars-source', '1.0.0.rc4'
-  gem "modernizr-rails"
-end
+# group :assets do
+gem "sass-rails", "4.0.0.rc2"
+gem "coffee-rails", "4.0.0"
+gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
+gem "uglifier"
+gem "bootstrap-sass", "~> 2.3.1.0"
+gem 'handlebars-source', '1.0.0.rc4'
+gem "handlebars_assets"
+gem "jquery-rails"
+gem "ember-rails"
+gem 'ember-source', '1.0.0.rc6'
+gem 'handlebars-source', '1.0.0.rc4'
+gem "modernizr-rails"
+# end
 
 group :development do
   gem "quiet_assets"
