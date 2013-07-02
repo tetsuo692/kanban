@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ProjectsController do
-  describe "#index" do
+  describe '#index' do
     let!(:projects){ create_list(:project, 2) }
     before(:each) do
       xhr :get, :index, format: :json
@@ -12,7 +12,7 @@ describe ProjectsController do
 
   end
 
-  describe "#show" do
+  describe '#show' do
     let(:project) { create(:project) }
 
     before(:each) do
@@ -23,8 +23,8 @@ describe ProjectsController do
     it { should respond_with(:success) }
   end
 
-  describe "#create" do
-    describe "with valid params" do
+  describe '#create' do
+    describe 'with valid params' do
       before(:each) do
         @count = Project.count
         xhr :post, :create, :project => attributes_for(:project)
@@ -39,7 +39,7 @@ describe ProjectsController do
 
     end
 
-    describe "with invalid params" do
+    describe 'with invalid params' do
       before(:each) do
         @count = Project.count
         Project.any_instance.stub(:save).and_return(false)
@@ -53,9 +53,9 @@ describe ProjectsController do
     end
   end
 
-  describe "#update" do
+  describe '#update' do
     let(:project) { create(:project) }
-    describe "with valid params" do
+    describe 'with valid params' do
       before(:each) do
         xhr :put, :update, id: project.to_param, project: attributes_for(:project)
       end
@@ -63,7 +63,7 @@ describe ProjectsController do
       it { should respond_with(:no_content) }
     end
 
-    describe "with invalid params" do
+    describe 'with invalid params' do
       before(:each) do
         Project.any_instance.stub(:save).and_return(false)
         xhr :put, :update, id: project.to_param, project: attributes_for(:project)
@@ -73,7 +73,7 @@ describe ProjectsController do
     end
   end
 
-  describe "#destroy" do
+  describe '#destroy' do
     let!(:count) { Project.count }
     let(:project) { create(:project) }
     before(:each) do

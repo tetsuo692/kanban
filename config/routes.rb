@@ -3,7 +3,7 @@ Kanban::Application.routes.draw do
 
 
   constraints format: :json do
-    scope "/api/v1" do
+    scope '/api/v1' do
       resources :projects, except: [:new, :edit]
       resources :stacks, except: [:new, :edit]
     end
@@ -16,7 +16,7 @@ Kanban::Application.routes.draw do
     get '*foo', to: 'welcome#index'
 
   end
-  root :to => "welcome#index"
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

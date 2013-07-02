@@ -13,20 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20130513145655) do
 
-  create_table "projects", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'projects', force: true do |t|
+    t.string   'title'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "stacks", force: true do |t|
-    t.string   "title"
-    t.integer  "project_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'stacks', force: true do |t|
+    t.string   'title'
+    t.integer  'project_id'
+    t.integer  'position'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  add_index "stacks", ["project_id"], name: "index_stacks_on_project_id"
+  add_index 'stacks', ['project_id'], name: 'index_stacks_on_project_id'
 
 end

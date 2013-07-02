@@ -5,7 +5,7 @@ describe StacksController do
 
   let(:project) { create(:project)}
 
-  describe "#index" do
+  describe '#index' do
     let!(:stacks) {create_list(:stack, 2, project: project)}
     before(:each) do
       xhr :get, :index, ids: stacks.map(&:to_param)
@@ -15,7 +15,7 @@ describe StacksController do
     it { should respond_with(:success) }
   end
 
-  describe "#show" do
+  describe '#show' do
     let(:stack){create(:stack, project:project)}
     before(:each) do
       xhr :get, :show, id: stack.to_param
@@ -25,7 +25,7 @@ describe StacksController do
     it { should respond_with(:success) }
   end
 
-  describe "#create" do
+  describe '#create' do
     let!(:count) { project.stacks.count }
     describe 'with valid params' do
 
@@ -61,7 +61,7 @@ describe StacksController do
     end
   end
 
-  describe "#update" do
+  describe '#update' do
     let!(:stack){ create(:stack, project: project) }
 
     describe 'with valid params' do
@@ -90,7 +90,7 @@ describe StacksController do
     end
   end
 
-  describe "#destroy" do
+  describe '#destroy' do
     let!(:stack){ create(:stack, project: project) }
     let!(:count){ project.stacks.count }
 
