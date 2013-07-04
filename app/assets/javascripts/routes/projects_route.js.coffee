@@ -5,6 +5,8 @@ Kanban.ProjectsRoute = Ember.Route.extend({
       controller = @controllerFor('projects.new')
       if controller
         controller.set('model', Kanban.Project.createRecord({title: 'blank'}))
+    closeModal: ->
+      @render('modal/hide', {into: 'application', outlet: 'modal'});
   }
 })
 
