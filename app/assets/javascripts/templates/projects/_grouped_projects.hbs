@@ -1,7 +1,9 @@
 <div class="row">
   <ol class='projects'>
     {{#each project in projectGroup}}
-      {{partial 'projects/project_box' }}
+      {{#unless project.isNew }}
+        {{partial 'projects/project_box'}}
+      {{/unless }}
     {{/each}}
   </ol>
 </div>

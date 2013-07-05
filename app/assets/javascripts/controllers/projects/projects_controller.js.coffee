@@ -8,5 +8,6 @@ Kanban.ProjectsIndexController = Ember.ArrayController.extend
   newProject: ->
     @send('modalNewProject')
 
+
 Kanban.ProjectsShowController = Ember.ObjectController.extend
   needs: ['stacks']
