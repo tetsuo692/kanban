@@ -7,3 +7,7 @@ Kanban.ProjectsNewView = Ember.View.extend
   layoutName: 'modal/layout'
   didInsertElement: ->
     @$('.modal, .modal-backdrop').addClass('in')
+  willDestroyElement: ->
+    model = @get('controller').get('model')
+    if model && model.get('isNew')
+      model.deleteRecord()
