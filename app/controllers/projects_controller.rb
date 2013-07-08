@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.includes(:stacks).joins(:stacks)
+    @projects = Project.all
 
     render json: @projects
   end
