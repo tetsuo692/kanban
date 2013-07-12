@@ -1,4 +1,1 @@
-Kanban.ProjectsNewController = Ember.ObjectController.extend
-  save: ->
-    @store.commit()
-    @content.addObserver 'id', @, 'afterSave'
+# Kanban.ProjectsNewController = Ember.ObjectController.extend

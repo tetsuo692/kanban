@@ -4,7 +4,4 @@ class ProjectSerializer < ActiveModel::Serializer
 
   has_many :stacks
 
-  def stack_ids
-    {count: object.stacks.count ,url: "projects/#{object.to_param}/stacks"}
-  end
 end

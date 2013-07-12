@@ -1,13 +1,5 @@
 Kanban.ProjectsRoute = Ember.Route.extend({
-  events: {
-    modalNewProject: ->
-      @render('projects/new', {outlet: 'modal', into: 'application'})
-      controller = @controllerFor('projects.new')
-      if controller
-        controller.set('model', Kanban.Project.createRecord({title: 'blank'}))
-    closeModal: ->
-      @render('modal/hide', {into: 'application', outlet: 'modal'});
-  }
+
 })
 
 Kanban.ProjectsIndexRoute = Kanban.ProjectsRoute.extend
@@ -21,8 +13,17 @@ Kanban.ProjectsShowRoute = Kanban.ProjectsRoute.extend
 
 Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
   model: ->
-    Kanban.Project.createRecord()
+    Kanban.Project.createRecord({title: 'blank'})
   setupController: (controller, model) ->
     controller.set('content', model)
-  renderTemplate: ->
-    @render('projects/index', {controller: 'projects.index'})
+    controller.set('project', model)
+  events:
+    save: (project) ->
+      _this = @
+      project.one 'didCreate', ->
+        Ember.run.next _this, ->
+          @transitionTo('projects.show', project)
+      project.one 'becameInvalid', ->
+        Ember.run.next _this, ->
+          @transitionTo('projects.new')
+      project.get('store').commit()

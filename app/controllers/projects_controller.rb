@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     if @project.save
       render json: @project, status: :created, location: @project
     else
-      render json: @project.errors, status: :unprocessable_entity
+      render json: {errors: {title: 'blank'}}, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(project_params)
       head :no_content
     else
-      render json: @project.errors, status: :unprocessable_entity
+      render json: @project.errors.to_json, status: :unprocessable_entity
     end
   end
 

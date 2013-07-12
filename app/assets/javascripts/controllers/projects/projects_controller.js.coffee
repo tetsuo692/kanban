@@ -5,8 +5,6 @@ Kanban.ProjectsIndexController = Ember.ArrayController.extend
     number = 4
     @get('content').eachSlice(number)
     ).property('content.@each')
-  newProject: ->
-    @send('modalNewProject')
 
 
 Kanban.ProjectsShowController = Ember.ObjectController.extend
