@@ -4,6 +4,7 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require vendor/ember-validations
 #= require vendor/ember-easyForm
 #= require vendor/bootstrap_wrapper
 #= require bootstrap

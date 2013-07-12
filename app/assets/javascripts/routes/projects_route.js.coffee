@@ -1,6 +1,20 @@
-Kanban.ProjectsRoute = Ember.Route.extend({
-
-})
+Kanban.ProjectsRoute = Ember.Route.extend
+  events:
+    save: (project) ->
+      if project.get('isDirty')
+        _this = @
+        project.one 'didCreate', ->
+          Ember.run.next _this, ->
+            @transitionTo('projects.show', project)
+        project.one 'becameInvalid', ->
+          Ember.run.next _this, ->
+            @transitionTo('projects.new')
+        project.one 'didUpdate', ->
+          Ember.run.next _this, ->
+            @transitionTo('projects.show', project)
+        project.get('store').commit()
+      else
+        @transitionTo('projects.show', project)
 
 Kanban.ProjectsIndexRoute = Kanban.ProjectsRoute.extend
   model: ->
@@ -17,13 +31,4 @@ Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
   setupController: (controller, model) ->
     controller.set('content', model)
     controller.set('project', model)
-  events:
-    save: (project) ->
-      _this = @
-      project.one 'didCreate', ->
-        Ember.run.next _this, ->
-          @transitionTo('projects.show', project)
-      project.one 'becameInvalid', ->
-        Ember.run.next _this, ->
-          @transitionTo('projects.new')
-      project.get('store').commit()
+
