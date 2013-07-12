@@ -1,1 +1,3 @@
-# Kanban.ProjectsNewController = Ember.ObjectController.extend
+Kanban.ProjectsNewController = Ember.ObjectController.extend
+  submit: ->
+    @send('save', @get('content'))

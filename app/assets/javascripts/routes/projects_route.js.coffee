@@ -13,7 +13,7 @@ Kanban.ProjectsShowRoute = Kanban.ProjectsRoute.extend
 
 Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
   model: ->
-    Kanban.Project.createRecord({title: 'blank'})
+    Kanban.Project.createRecord()
   setupController: (controller, model) ->
     controller.set('content', model)
     controller.set('project', model)
