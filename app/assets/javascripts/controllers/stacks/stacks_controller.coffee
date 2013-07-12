@@ -1,3 +1,3 @@
 Kanban.StacksController = Ember.ArrayController.extend
-  sortProperties: ['title']
+  sortProperties: ['position']
   sortAscending: true

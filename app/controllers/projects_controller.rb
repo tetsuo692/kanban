@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = ProjectService.new(project_params)
 
     if @project.save
       render json: @project, status: :created, location: @project
