@@ -4,7 +4,6 @@
 #= require ember
 #= require ember-data
 #= require bootstrap
-#= require ember-bootstrap
 #= require_self
 #= require kanban
 window.Kanban = Ember.Application.create()
