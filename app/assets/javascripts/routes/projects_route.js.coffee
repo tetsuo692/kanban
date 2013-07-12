@@ -25,6 +25,11 @@ Kanban.ProjectsShowRoute = Kanban.ProjectsRoute.extend
     @controllerFor('stacks').set('content', model.get('stacks'))
     controller.set('content', model)
 
+Kanban.ProjectsEditRoute = Kanban.ProjectsRoute.extend
+  setupController: (controller, model) ->
+    controller.set('content', model)
+    @controllerFor('stacks').set('content', model.get('stacks'))
+
 Kanban.ProjectsNewRoute = Kanban.ProjectsRoute.extend
   model: ->
     Kanban.Project.createRecord()
