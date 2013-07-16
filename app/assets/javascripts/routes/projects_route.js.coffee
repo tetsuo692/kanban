@@ -5,16 +5,18 @@ Kanban.ProjectsRoute = Ember.Route.extend
         _this = @
         project.one 'didCreate', ->
           Ember.run.next _this, ->
-            @transitionTo('projects.show', project)
+            @send('show', project)
         project.one 'becameInvalid', ->
           Ember.run.next _this, ->
-            @transitionTo('projects.new')
+            @send('show', project)
         project.one 'didUpdate', ->
           Ember.run.next _this, ->
-            @transitionTo('projects.show', project)
+            @send('show', project)
         project.get('store').commit()
       else
-        @transitionTo('projects.show', project)
+        @send('show', project)
+    show: (project) ->
+      @transitionTo('projects.show', project)
 
 Kanban.ProjectsIndexRoute = Kanban.ProjectsRoute.extend
   model: ->
