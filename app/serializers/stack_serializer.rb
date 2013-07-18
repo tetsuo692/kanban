@@ -1,4 +1,3 @@
 class StackSerializer < ActiveModel::Serializer
-  attributes :id, :title, :position
-  has_one :project
+  attributes :id, :title, :position, :project_id
 end
