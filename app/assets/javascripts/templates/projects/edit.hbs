@@ -1,10 +1,5 @@
 {{#formFor controller wrapper="twitter-bootstrap"}}
   {{input title placeholder='My Project' hint="The project Title"}}
-  {{#each stack in stacks}}
-    {{#with stack}}
-      {{input title}}
-    {{/with}}
-  {{/each}}
   <div class="form-actions">
     {{#linkTo 'projects.show' controller}} Cancel {{/linkTo}} |
     {{submit 'Update' class='btn'}}
