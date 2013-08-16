@@ -9,7 +9,7 @@ Kanban.Router.map ->
       path: '/:project_id'
     @route 'edit',
       path: '/:project_id/edit'
-    @resource 'stacks', ->
+    @resource 'stacks' ,->
       @route 'new'
       @route 'edit',
         path: '/:stack_id/edit'

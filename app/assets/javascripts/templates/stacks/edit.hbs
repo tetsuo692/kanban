@@ -1,1 +1,7 @@
-{{title}}
+{{#formFor controller wrapper="twitter-bootstrap"}}
+  {{input title placeholder='My Stack' hint="The Stack Title"}}
+  <div class="form-actions">
+    {{#linkTo 'projects.show' project}} Cancel {{/linkTo}} |
+    {{submit 'Update' class='btn'}}
+  </div>
+{{/formFor}}

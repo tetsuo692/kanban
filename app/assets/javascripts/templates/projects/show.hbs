@@ -1,7 +1,4 @@
-<div class='page-header'>
-  {{#linkTo 'projects.edit' content class='btn btn-small pull-right'}} Edit {{/linkTo}}
-  <h2>{{ title }}</h2>
-</div>
+{{partial 'projects/header'}}
 <div class='row'>
   <ul class="stacks">
   {{#each stack in controllers.stacks}}
