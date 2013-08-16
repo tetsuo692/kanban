@@ -18,10 +18,7 @@ Kanban.StacksRoute = Ember.Route.extend
         @send('show', project)
     show: (project) ->
       @transitionTo('projects.show', project)
-
 Kanban.StacksEditRoute = Ember.Route.extend
   setupController: (controller, model) ->
     controller.set('content', model)
     @controllerFor('stacks').set('project', model.get('project'))
-
-

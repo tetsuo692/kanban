@@ -1,8 +1,8 @@
-Kanban.Stack = DS.Model.extend
+Kanban.Stack = DS.Model.extend Ember.Validations.Mixin
+Kanban.Stack.reopen
   title: DS.attr('string')
   position: DS.attr('number')
   project: DS.belongsTo('Kanban.Project')
-  # setProjectDirty: (->
-  #   if project = @get('project')
-  #     project.get('stateManager').goToState('isDirty')
-  # ).observes('isDirty')
+  validations:
+    title:
+      presence: true
