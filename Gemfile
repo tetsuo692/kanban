@@ -32,12 +32,11 @@ gem "coffee-rails", "4.0.0"
 gem "compass-rails", github: 'Compass/compass-rails', branch: 'rails4'
 gem "uglifier"
 gem "bootstrap-sass", "~> 2.3.1.0"
-gem 'handlebars-source', '1.0.0.rc4'
 gem "handlebars_assets"
 gem "jquery-rails"
 gem "ember-rails"
-gem 'ember-source', '1.0.0.rc6'
-gem 'handlebars-source', '1.0.0.rc4'
+gem 'ember-source', '1.0.0.rc7'
+gem 'handlebars-source', '1.0.12'
 gem "modernizr-rails"
 # end
 

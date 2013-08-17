@@ -13,4 +13,3 @@ Kanban.Router.map ->
       @route 'new'
       @route 'edit',
         path: '/:stack_id/edit'
-
