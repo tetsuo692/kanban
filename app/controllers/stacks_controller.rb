@@ -19,7 +19,7 @@ class StacksController < ApplicationController
   # POST /stacks
   # POST /stacks.json
   def create
-    @stack = @project.stacks.build(stack_params)
+    @stack = Stack.new(stack_params)
 
     if @stack.save
       render json: @stack, status: :created, location: [@project, @stack]
@@ -51,11 +51,7 @@ class StacksController < ApplicationController
 
   private
 
-  def find_project
-    @project = Project.find(params[:project_id])
-  end
-
   def stack_params
-    params.require(:stack).permit(:title)
+    params.require(:stack).permit(:title, :project_id)
   end
 end

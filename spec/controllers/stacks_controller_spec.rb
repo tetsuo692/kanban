@@ -4,7 +4,7 @@ require 'spec_helper'
 describe StacksController do
 
   let(:project) { create(:project)}
-
+  let(:valid_attributes){ params_for(:stack).merge(project_id: project) }
   describe '#index' do
     let!(:stacks) {create_list(:stack, 2, project: project)}
     before(:each) do
@@ -30,7 +30,7 @@ describe StacksController do
     describe 'with valid params' do
 
       before(:each) do
-        xhr :post, :create,  stack: params_for(:stack)
+        xhr :post, :create,  stack: valid_attributes
       end
 
 
