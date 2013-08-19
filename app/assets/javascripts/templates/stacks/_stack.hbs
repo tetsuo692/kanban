@@ -5,34 +5,22 @@
       <h5>{{stack.title}}</h5>
     </header>
 
-    <ol class='cards'>
-      <li class='card'>
-        <div class='card important'>
-          <header class='card_header'>
-            <h6>11</h6>
-          </header>
-          <footer>
-            <ul>
-              <li>issue</li>
-              <li>bug</li>
-            </ul>
-          </footer>
-        </div>
-      </li>
-      <li class='card'>
-        <div class='card'>
-          <header>
-            <h6>11</h6>
-          </header>
-        </div>
-      </li>
-      <li class='card'>
-        <div class='card'>
-          <header>
-            <h6>11</h6>
-          </header>
-        </div>
-      </li>
+    <ol class='stories'>
+      {{#each story in stack.stories}}
+        <li class='story'>
+          <div class='story important'>
+            <header class='story_header'>
+              <h6>{{story.title}}</h6>
+            </header>
+            <footer>
+              <ul>
+                <li>issue</li>
+                <li>bug</li>
+              </ul>
+            </footer>
+          </div>
+        </li>
+      {{/each}}
     </ol>
   </div>
 </li>

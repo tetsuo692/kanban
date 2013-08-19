@@ -1,10 +1,9 @@
-describe 'Project', ->
+describe 'Stack', ->
   beforeEach ->
     Ember.testing = true
-
   describe 'Title', ->
     it 'add a title', ->
       Ember.run ->
-        project = Kanban.Project.createRecord
+        stack = Kanban.Stack.createRecord
           title: 'Yo'
-        expect(project.get('title')).toEqual('Yo')
+        expect(stack.get('title')).toEqual('Yo')

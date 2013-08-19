@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :title
 
   has_many :stacks
+  has_many :stories, through: :stacks
 end

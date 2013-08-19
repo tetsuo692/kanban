@@ -51,7 +51,7 @@ group :test, :development do
   gem "parallel_tests"
   gem 'spork-rails', github: 'A-gen/spork-rails'
   gem "webrat"
-  gem "shoulda-matchers", "~> 2.1.0"
+  gem "shoulda-matchers", "~> 2.3.0"
   gem "factory_girl_rails"
   gem "rspec-rails", "~> 2.0"
   gem 'database_cleaner', '<= 1.0.1'

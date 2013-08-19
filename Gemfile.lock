@@ -240,7 +240,7 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    shoulda-matchers (2.1.0)
+    shoulda-matchers (2.3.0)
       activesupport (>= 3.0.0)
     slop (3.4.6)
     spork (1.0.0rc3)
@@ -308,7 +308,7 @@ DEPENDENCIES
   rb-inotify
   rspec-rails (~> 2.0)
   sass-rails (= 4.0.0.rc2)
-  shoulda-matchers (~> 2.1.0)
+  shoulda-matchers (~> 2.3.0)
   spork-rails!
   sqlite3
   terminal-notifier-guard

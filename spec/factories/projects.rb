@@ -8,7 +8,7 @@ FactoryGirl.define do
       end
 
       after(:create) do |project, evaluator|
-        create_list(:stack, evaluator.stacks_count, project: project)
+        create_list(:stack_with_stories, evaluator.stacks_count, project: project)
       end
     end
   end
