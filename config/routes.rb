@@ -1,12 +1,11 @@
 
 Kanban::Application.routes.draw do
 
-
-  resources :stories, except: [:new, :edit]
   constraints format: :json do
     scope '/api/v1' do
       resources :projects, except: [:new, :edit]
       resources :stacks, except: [:new, :edit]
+      resources :stories, except: [:new, :edit]
     end
   end
 

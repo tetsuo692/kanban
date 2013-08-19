@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130513145655) do
+ActiveRecord::Schema.define(version: 20130819094055) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -28,5 +28,16 @@ ActiveRecord::Schema.define(version: 20130513145655) do
   end
 
   add_index "stacks", ["project_id"], name: "index_stacks_on_project_id"
+
+  create_table "stories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "stack_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stories", ["stack_id"], name: "index_stories_on_stack_id"
 
 end

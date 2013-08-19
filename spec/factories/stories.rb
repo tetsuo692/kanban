@@ -2,9 +2,8 @@
 
 FactoryGirl.define do
   factory :story do
-    title "MyString"
+    sequence(:title) {|n| "Story #{n}" }
     description "MyText"
     stack nil
-    position 1
   end
 end

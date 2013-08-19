@@ -54,7 +54,7 @@ group :test, :development do
   gem "shoulda-matchers", "~> 2.1.0"
   gem "factory_girl_rails"
   gem "rspec-rails", "~> 2.0"
-  gem 'database_cleaner'
+  gem 'database_cleaner', '<= 1.0.1'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
