@@ -4,31 +4,23 @@ describe StoriesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/stories").should route_to("stories#index")
-    end
-
-    it "routes to #new" do
-      get("/stories/new").should route_to("stories#new")
+      get("/api/v1/stories.json").should route_to("stories#index", format:'json')
     end
 
     it "routes to #show" do
-      get("/stories/1").should route_to("stories#show", :id => "1")
-    end
-
-    it "routes to #edit" do
-      get("/stories/1/edit").should route_to("stories#edit", :id => "1")
+      get("/api/v1/stories/1.json").should route_to("stories#show", :id => "1", format:'json')
     end
 
     it "routes to #create" do
-      post("/stories").should route_to("stories#create")
+      post("/api/v1/stories.json").should route_to("stories#create", format:'json')
     end
 
     it "routes to #update" do
-      put("/stories/1").should route_to("stories#update", :id => "1")
+      put("/api/v1/stories/1.json").should route_to("stories#update", :id => "1", format:'json')
     end
 
     it "routes to #destroy" do
-      delete("/stories/1").should route_to("stories#destroy", :id => "1")
+      delete("/api/v1/stories/1.json").should route_to("stories#destroy", :id => "1", format:'json')
     end
 
   end

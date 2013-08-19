@@ -18,7 +18,7 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
-    @story = Story.new(params[:story])
+    @story = Story.new(story_params)
 
     if @story.save
       render json: @story, status: :created, location: @story
@@ -32,7 +32,7 @@ class StoriesController < ApplicationController
   def update
     @story = Story.find(params[:id])
 
-    if @story.update(params[:story])
+    if @story.update(story_params)
       head :no_content
     else
       render json: @story.errors, status: :unprocessable_entity
@@ -46,5 +46,11 @@ class StoriesController < ApplicationController
     @story.destroy
 
     head :no_content
+  end
+
+  private
+
+  def story_params
+    params.require(:story).permit(:title, :description, :stack_id)
   end
 end
