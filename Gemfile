@@ -38,7 +38,7 @@ gem "ember-rails"
 gem 'ember-source', '1.0.0.rc7'
 gem 'handlebars-source', '1.0.12'
 gem "modernizr-rails"
-
+gem "ember-bootstrap-asset"
 
 group :development do
   gem "quiet_assets"
